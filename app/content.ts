@@ -55,9 +55,11 @@ const mn = {
     subtitle: "Амжилт",
     items: [
       { year: "3×", text: "Улсын аварга" },
+      { year: "Мастер", text: "Олон улсын хэмжээний спортын мастер" },
       { year: "Ази", text: "Азийн аварга шалгаруулах тэмцээн — хоёр мөнгөн медаль" },
       { year: "Азийн цом", text: "Азийн цом — алт, мөнгөн медаль" },
       { year: "Дэлхийн цом", text: "Дэлхийн цом — хоёр алтан медаль" },
+      { year: "Бүс", text: "Дэлхийн цомын аваргын бүс — Монголд цорын ганц" },
       { year: "Дэлхий", text: "Дэлхийн аварга шалгаруулах тэмцээн — 4-р байр" },
       { year: "2025", text: "Монголын Гар Барилдааны Нэгдсэн Холбооны шилдэг тамирчин" },
       { year: "Дасгалжуулагч", text: "Монголын гар барилдааны албан ёсны дасгалжуулагч" },
@@ -138,9 +140,11 @@ const en: typeof mn = {
     subtitle: "Achievements",
     items: [
       { year: "3×", text: "National champion" },
+      { year: "Master", text: "International Master of Sport" },
       { year: "Asia", text: "Asian Championships — two silver medals" },
       { year: "Asian Cup", text: "Asian Cup — gold and silver medals" },
       { year: "World Cup", text: "World Cup — two gold medals" },
+      { year: "Belt", text: "World Cup champion's belt — the only one in Mongolia" },
       { year: "World", text: "World Championships — 4th place" },
       { year: "2025", text: "Best athlete of the year, Mongolian Armwrestling Federation" },
       { year: "Coach", text: "Official coach of Mongolian arm wrestling" },
