@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #060505;
+  --foreground: #fafafa;
+  --gold: #d4a53c;
+  --gold-light: #f6d77f;
+  --gold-dark: #8a5d17;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-gold: var(--gold);
+  --font-cinzel: var(--font-cinzel-face), Georgia, serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-display: var(--font-oswald), system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Алтан өнгө */
+.gold-bg {
+  background: linear-gradient(135deg, #f9e39a 0%, #d4a53c 45%, #a8771f 70%, #f0cd6e 100%);
+}
+.gold-text {
+  background: linear-gradient(180deg, #fbe7a6 0%, #e2b650 45%, #a8771f 75%, #f0cd6e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* Мөнгөлөг металл текст, алтан хүрээтэй */
+.metal-text {
+  background: linear-gradient(180deg, #ffffff 0%, #d9d9d9 40%, #7a7a7a 55%, #e8e8e8 75%, #9a9a9a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 1px 0 #8a5d17) drop-shadow(0 0 1px #d4a53c) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.8));
+}
+
+/* Алтан оч */
+.sparks {
+  background:
+    repeating-linear-gradient(-25deg, transparent 0 22px, rgba(246, 215, 127, 0.07) 22px 23px, transparent 23px 60px),
+    repeating-linear-gradient(-32deg, transparent 0 40px, rgba(212, 165, 60, 0.06) 40px 41px, transparent 41px 90px);
+  mask-image:
+    radial-gradient(ellipse 30% 45% at 0% 55%, black, transparent),
+    radial-gradient(ellipse 30% 45% at 100% 55%, black, transparent);
+  animation: drift 12s linear infinite;
+}
+@keyframes drift {
+  to { background-position: 200px -120px, -160px 140px; }
+}
+
+/* Дээд талын скролл прогресс */
+.scroll-progress {
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: grow linear both;
+  animation-timeline: scroll(root);
+}
+@keyframes grow {
+  to { transform: scaleX(1); }
+}
+
+/* Скроллоор гарч ирэх */
+.reveal {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Улаан гэрэл */
+.aura {
+  transform: translate(-50%, -50%);
+  animation: pulse 8s ease-in-out infinite;
+}
+@keyframes pulse {
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* Эргэлддэг туяа */
+.rays {
+  transform: translate(-50%, -50%);
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(246, 215, 127, 0.05) 0deg 4deg,
+    transparent 4deg 18deg
+  );
+  mask-image: radial-gradient(closest-side, black, transparent);
+  animation: spin 90s linear infinite;
+}
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Кино ширхэг */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .aura, .rays, .sparks, .scroll-progress { animation: none; }
+  .reveal { opacity: 1; transform: none; }
 }
