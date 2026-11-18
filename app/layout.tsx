@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond, Manrope, Oswald } from "next/font/google";
 import "./globals.css";
+import Shell from "./shell";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -27,7 +28,7 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: "KHUSLENTS.ARM | Гар барилдаан",
+  title: { default: "KHUSLENTS.ARM | Гар барилдаан", template: "%s | KHUSLENTS.ARM" },
   description: "Гар барилдааны бэлтгэл, тэмцээн, рейтинг — Монголд.",
 };
 
@@ -37,7 +38,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="mn"
       className={`${manrope.variable} ${oswald.variable} ${cormorant.variable} ${cinzel.variable} h-full antialiased`}
     >
-      <body className="min-h-full overflow-x-clip">{children}</body>
+      <body className="min-h-full overflow-x-clip">
+        <Shell>{children}</Shell>
+      </body>
     </html>
   );
 }
