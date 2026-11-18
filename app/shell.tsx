@@ -160,7 +160,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             <div>
               <Wordmark className="text-2xl" />
               <p className="mt-1 font-cinzel text-[0.65rem] uppercase tracking-[0.3em] text-white/50">{brand.motto}</p>
-              <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50">{t.footer.tagline}</p>
             </div>
             <div>
               <p className={eyebrow}>{t.footer.menu}</p>

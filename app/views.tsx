@@ -5,7 +5,7 @@ import { useState } from "react";
 import { contactHref, orderInstagram, orderMessenger, orderPhone, phone, products, schedulePlace, socials } from "./content";
 import { Icon } from "./icons";
 import { useLang } from "./shell";
-import { Programs, Schedule } from "./site";
+import { Programs } from "./site";
 import { GoldButton, Glow, Grain, PageHero, display, eyebrow, section } from "./ui";
 
 /* /training */
@@ -77,12 +77,6 @@ export function TrainingView() {
         <Glow className="left-[15%] top-[30%] w-[36rem]" />
         <Grain />
         <Programs />
-      </section>
-
-      <section className={`${section} bg-[#080707] py-20 sm:py-28`}>
-        <Glow className="left-[10%] top-[60%] w-[36rem]" />
-        <Grain />
-        <Schedule />
       </section>
 
       <Cta />

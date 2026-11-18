@@ -15,14 +15,14 @@ export const images = {
 
 export const socials = [
   { label: "Instagram", href: "https://www.instagram.com/khuslents.arm/" },
-  { label: "TikTok", href: "https://tiktok.com/" },
+  { label: "TikTok", href: "https://www.tiktok.com/@khuslentsogtpurev" },
   { label: "Facebook", href: "https://www.facebook.com/Khuslentsogtpurev" },
   { label: "Email", href: "mailto:khuslentsogtpurev@gmail.com" },
 ];
 
 export const contactHref = "mailto:khuslentsogtpurev@gmail.com";
 export const phone = "94204294";
-export const videoHref = "https://tiktok.com/";
+export const videoHref = "https://www.instagram.com/khuslents.arm/";
 /* Дэлгүүр — захиалга Messenger/утсаар.
    orderMessenger / orderPhone хоосон бол «Залгаж захиалах» товч харагдахгүй. */
 export const orderMessenger = "https://m.me/Khuslentsogtpurev"; // Facebook хуудас бол: "https://m.me/<хуудасны нэр>". Хоосон бол товч харагдахгүй.
@@ -88,7 +88,6 @@ const mn = {
     { icon: "dumbbell", label: "Сургалт", href: "/training" },
     { icon: "layers", label: "Систем", href: "/system" },
     { icon: "trophy", label: "Амжилт", href: "#journey" },
-    { icon: "chart", label: "Чансаа", href: "#journey" },
   ],
   programs: {
     title: "Сургалтын хөтөлбөр",
@@ -100,26 +99,24 @@ const mn = {
   },
   journey: {
     eyebrow: "Тамирчны тухай",
-    title: "Ширээн дээр бүх зүйлээ зориулна.",
+    title: "Хамгийн сайнаараа хичээ, чиний өдөр ирнэ.",
     name: "Хүслэн",
     subtitle: "Амжилт",
     items: [
-      { year: "3×", text: "Улсын аварга" },
+      { year: "3 удаагийн", text: "Улсын аварга" },
       { year: "Мастер", text: "Олон улсын хэмжээний спортын мастер" },
-      { year: "Ази", text: "Азийн аварга шалгаруулах тэмцээн — хоёр мөнгөн медаль" },
-      { year: "Азийн цом", text: "Азийн цом — алт, мөнгөн медаль" },
-      { year: "Дэлхийн цом", text: "Дэлхийн цом — хоёр алтан медаль" },
+      { year: "2025", text: "Азийн аварга шалгаруулах тэмцээн — хоёр мөнгөн медаль" },
+      { year: "2026", text: "Азийн цом — алт, мөнгөн медаль" },
+      { year: "2026", text: "Дэлхийн цом — хоёр алтан медаль" },
       { year: "Бүс", text: "Дэлхийн цомын аваргын бүс — Монголд цорын ганц" },
-      { year: "Дэлхий", text: "Дэлхийн аварга шалгаруулах тэмцээн — 4-р байр" },
+      { year: "2026", text: "Дэлхийн аварга шалгаруулах тэмцээн — 4-р байр" },
       { year: "2025", text: "Монголын Гар Барилдааны Нэгдсэн Холбооны шилдэг тамирчин" },
-      { year: "Дасгалжуулагч", text: "Монголын гар барилдааны албан ёсны дасгалжуулагч" },
     ],
   },
   statement: {
-    eyebrow: "Зорилго",
+    eyebrow: "Аварга",
     big: "Монголын гар барилдааныг дэлхийд.",
     italic: "Ялалт бэлтгэлээс эхэлдэг.",
-    glow: "Аварга болохоор төрсөн.",
   },
   video: {
     eyebrow: "Видео",
@@ -248,7 +245,6 @@ const en: typeof mn = {
     { icon: "dumbbell", label: "Training", href: "/training" },
     { icon: "layers", label: "System", href: "/system" },
     { icon: "trophy", label: "Achievements", href: "#journey" },
-    { icon: "chart", label: "Ranking", href: "#journey" },
   ],
   programs: {
     title: "Our programs",
@@ -260,26 +256,24 @@ const en: typeof mn = {
   },
   journey: {
     eyebrow: "About the athlete",
-    title: "Everything goes on the table.",
+    title: "Give it your best — your day will come.",
     name: "Khuslen",
     subtitle: "Achievements",
     items: [
-      { year: "3×", text: "National champion" },
+      { year: "3-time", text: "National champion" },
       { year: "Master", text: "International Master of Sport" },
-      { year: "Asia", text: "Asian Championships — two silver medals" },
-      { year: "Asian Cup", text: "Asian Cup — gold and silver medals" },
-      { year: "World Cup", text: "World Cup — two gold medals" },
+      { year: "2025", text: "Asian Championships — two silver medals" },
+      { year: "2026", text: "Asian Cup — gold and silver medals" },
+      { year: "2026", text: "World Cup — two gold medals" },
       { year: "Belt", text: "World Cup champion's belt — the only one in Mongolia" },
-      { year: "World", text: "World Championships — 4th place" },
+      { year: "2026", text: "World Championships — 4th place" },
       { year: "2025", text: "Best athlete of the year, Mongolian Armwrestling Federation" },
-      { year: "Coach", text: "Official coach of Mongolian arm wrestling" },
     ],
   },
   statement: {
-    eyebrow: "Mission",
+    eyebrow: "Champion",
     big: "Mongolian arm wrestling on the world stage.",
     italic: "Victory starts in training.",
-    glow: "Built to be a champion.",
   },
   video: {
     eyebrow: "Video",

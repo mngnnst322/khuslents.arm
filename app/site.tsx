@@ -5,12 +5,12 @@ import Link from "next/link";
 import { contactHref, images, videoHref } from "./content";
 import { Icon } from "./icons";
 import { useLang } from "./shell";
-import { Wordmark, GoldButton, Glow, Grain, OutlineButton, SectionTitle, display, eyebrow, section } from "./ui";
+import { Wordmark, GoldButton, Glow, Grain, SectionTitle, display, eyebrow, section } from "./ui";
 
 /* Лого — public/tselogo.jpg */
 function Logo() {
   return (
-    <div className="relative mx-auto aspect-[3/2] w-[min(96vw,44rem)] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,black_60%,transparent_100%)]">
+    <div className="relative mx-auto aspect-[3/2] w-[min(96vw,44rem)] mix-blend-lighten [mask-image:radial-gradient(ellipse_75%_75%_at_50%_50%,black_55%,transparent_100%)]">
       <Image
         src={images.logo}
         alt="KHUSLENTS.ARM — Built to be a champion"
@@ -38,7 +38,7 @@ export function Programs() {
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-[radial-gradient(ellipse_at_center,#2a2214,#0a0907)]">
                   {p.image ? (
-                    <Image src={p.image} alt="" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover grayscale transition duration-700 group-hover:scale-105" />
+                    <Image src={p.image} alt="" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover object-[50%_30%] grayscale transition duration-700 group-hover:scale-105" />
                   ) : (
                     <div className="grid h-full place-items-center">
                       <Icon name="dumbbell" className="h-24 w-24 text-white/20" />
@@ -114,7 +114,7 @@ export default function Site() {
         <Glow className="left-1/2 top-[40%] w-[46rem]" />
         <Grain />
 
-        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-4 pb-10 pt-8 text-center sm:px-6 sm:pt-12">
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pb-10 pt-8 text-center sm:px-6 sm:pt-12">
           <Logo />
 
           <p className="metal-text mt-12 font-cinzel text-[clamp(1rem,3.5vw,1.6rem)] font-semibold uppercase italic tracking-[0.4em]">
@@ -125,15 +125,11 @@ export default function Site() {
           </p>
           <div aria-hidden="true" className="mt-4 h-px w-full max-w-xl bg-gradient-to-r from-transparent via-gold to-transparent shadow-[0_0_12px_rgba(212,165,60,0.8)]" />
 
-          <div className="mt-10 grid w-full max-w-xl grid-cols-1 gap-4 sm:grid-cols-2">
-            <GoldButton href={contactHref} icon="userPlus">{t.hero.register}</GoldButton>
-            <OutlineButton href="#video" icon="playCircle">{t.hero.intro}</OutlineButton>
-          </div>
         </div>
 
         {/* 4 онцлог */}
         <div className="relative z-10 mx-auto max-w-5xl px-4 pb-16 sm:px-6">
-          <div className="grid grid-cols-4 divide-x divide-gold/20 border-y border-gold/20 bg-black/30 py-6 backdrop-blur-sm">
+          <div className="grid grid-cols-3 divide-x divide-gold/20 border-y border-gold/20 bg-black/30 py-6 backdrop-blur-sm">
             {t.features.map((f, i) => (
               <Link key={f.label} href={f.href} className="group flex flex-col items-center gap-2 px-1 text-center">
                 <Icon name={f.icon} className="h-8 w-8 text-gold transition group-hover:scale-110 sm:h-10 sm:w-10" />
@@ -175,7 +171,7 @@ export default function Site() {
               <p className={eyebrow}>{t.journey.subtitle}</p>
               <ol className="mt-6 divide-y divide-gold/15 border-y border-gold/15">
                 {t.journey.items.map((item) => (
-                  <li key={item.year} className="group flex items-baseline gap-5 py-5">
+                  <li key={item.text} className="group flex items-baseline gap-5 py-5">
                     <span className="w-28 shrink-0 font-display text-lg font-bold uppercase text-white transition-colors group-hover:text-gold sm:w-44 sm:text-2xl">
                       {item.year}
                     </span>
@@ -208,9 +204,6 @@ export default function Site() {
           <p className="reveal mt-8 font-serif text-[clamp(1.6rem,4vw,2.5rem)] italic text-white/80">
             {t.statement.italic}
           </p>
-          <p className={`reveal gold-text mt-6 text-[clamp(2.5rem,9vw,6.5rem)] [filter:drop-shadow(0_0_30px_rgba(212,165,60,0.4))] ${display}`}>
-            {t.statement.glow}
-          </p>
         </div>
       </section>
 
@@ -235,13 +228,6 @@ export default function Site() {
             <span className="absolute bottom-5 left-6 text-sm font-bold uppercase tracking-wide text-white">{t.video.cta}</span>
           </a>
         </div>
-      </section>
-
-      {/* Хуваарь */}
-      <section id="schedule" className={`${section} scroll-mt-16 bg-[#080707] py-20 sm:py-28`}>
-        <Glow className="left-[10%] top-[60%] w-[36rem]" />
-        <Grain />
-        <Schedule />
       </section>
 
       {/* Төгсгөл CTA */}
